@@ -1,4 +1,4 @@
-<section class="hero-wrap hero-wrap-2" style="background-image:url(../assets/admin/img/informasi_web/<?= $informasi['background'] ?>);" data-stellar-background-ratio="0.5">
+<section class="hero-wrap hero-wrap-2" style="background-image:url(../../../assets/admin/img/informasi_web/<?= $informasi['background'] ?>);" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
         <div class="row no-gutters slider-text align-items-end">
@@ -15,7 +15,7 @@
         <div class="row no-gutters">
             <?php foreach ($galeri as $g) { ?>
                 <div class="col-md-3 col-4 mr-2 mb-2 ftco-animate">
-                    <div class="work img d-flex align-items-center" style="background-image: url(../assets/admin/img/galeri/<?= $g['foto'] ?>);">
+                    <div class="work img d-flex align-items-center" style="background-image: url(../../../assets/admin/img/galeri/<?= $g['foto'] ?>);">
                         <a href="<?= base_url('assets/admin/img/galeri/' . $g['foto']) ?>" class="icon image-popup d-flex justify-content-center align-items-center">
                             <span class="fa fa-expand"></span></a>
                     </div>
