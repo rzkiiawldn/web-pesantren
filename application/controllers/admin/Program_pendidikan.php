@@ -27,7 +27,7 @@ class Program_pendidikan extends CI_Controller
         $data = [
             'title' => 'Detail Program Pendidikan',
             'user' => $this->db->get_where('tb_user', ['username' => $this->session->userdata('username')])->row_array(),
-            'program' => $this->db->query("SELECT * FROM tb_program_pendidikan ts JOIN tb_program_pendidikan tp ON ts.id_program = tp.id_program WHERE id_program = '$id_program'")->row_array()
+            'program' => $this->db->query("SELECT * FROM tb_program_pendidikan ts JOIN tb_program_pendidikan tp ON ts.id_program = tp.id_program WHERE ts.id_program = '$id_program'")->row_array()
         ];
         $this->load->view('templates/admin_header', $data);
         $this->load->view('templates/admin_sidebar', $data);

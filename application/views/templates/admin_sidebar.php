@@ -34,48 +34,6 @@
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item <?php if ($this->uri->segment(2) == 'program_pendidikan' || $this->uri->segment(2) == 'profil' || $this->uri->segment(2) == 'sambutan' || $this->uri->segment(2) == 'guru' || $this->uri->segment(2) == 'brosur' || $this->uri->segment(2) == 'galeri' || $this->uri->segment(2) == 'fasilitas' || $this->uri->segment(2) == 'ekstrakurikuler' || $this->uri->segment(2) == 'siswa_prestasi') {
-                            echo "active";
-                        } ?>">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-            <i class="fas fa-fw fa-house-user"></i>
-            <span>Informasi Sekolah</span>
-        </a>
-        <div id="collapseTwo" class="collapse <?php if ($this->uri->segment(2) == 'program_pendidikan' || $this->uri->segment(2) == 'profil' || $this->uri->segment(2) == 'sambutan' || $this->uri->segment(2) == 'guru' || $this->uri->segment(2) == 'brosur' || $this->uri->segment(2) == 'galeri' || $this->uri->segment(2) == 'fasilitas' || $this->uri->segment(2) == 'ekstrakurikuler' || $this->uri->segment(2) == 'siswa_prestasi') {
-                                                    echo "show";
-                                                } ?>" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Informasi sekolah :</h6>
-                <a class="collapse-item <?php if ($this->uri->segment(2) == 'program_pendidikan') {
-                                            echo "active";
-                                        } ?>" href="<?= base_url('admin/program_pendidikan'); ?>">Program Pendidikan</a>
-                <a class="collapse-item <?php if ($this->uri->segment(2) == 'profil') {
-                                            echo "active";
-                                        } ?>" href="<?= base_url('admin/profil'); ?>">Profil Sekolah</a>
-                <a class="collapse-item <?php if ($this->uri->segment(2) == 'sambutan') {
-                                            echo "active";
-                                        } ?>" href="<?= base_url('admin/sambutan'); ?>">Sambutan</a>
-                <!-- <a class="collapse-item <?php if ($this->uri->segment(2) == 'guru') {
-                                                    echo "active";
-                                                } ?>" href="<?= base_url('admin/guru'); ?>">Data Guru</a> -->
-                <a class="collapse-item <?php if ($this->uri->segment(2) == 'brosur') {
-                                            echo "active";
-                                        } ?>" href="<?= base_url('admin/brosur'); ?>">Brosur Sekolah</a>
-                <a class="collapse-item <?php if ($this->uri->segment(2) == 'galeri') {
-                                            echo "active";
-                                        } ?>" href="<?= base_url('admin/galeri'); ?>">Galeri Sekolah</a>
-                <a class="collapse-item <?php if ($this->uri->segment(2) == 'fasilitas') {
-                                            echo "active";
-                                        } ?>" href="<?= base_url('admin/fasilitas'); ?>">Fasilitas Sekolah</a>
-                <a class="collapse-item <?php if ($this->uri->segment(2) == 'ekstrakurikuler') {
-                                            echo "active";
-                                        } ?>" href="<?= base_url('admin/ekstrakurikuler'); ?>">Ekstrakurikuler</a>
-                <a class="collapse-item <?php if ($this->uri->segment(2) == 'siswa_prestasi') {
-                                            echo "active";
-                                        } ?>" href="<?= base_url('admin/siswa_prestasi'); ?>">Siswa Berprestasi</a>
-            </div>
-        </div>
-    </li>
 
     <!-- Nav Item - Program Pendidikan -->
     <li class="nav-item <?php if ($this->uri->segment(2) == 'program_pendidikan') {

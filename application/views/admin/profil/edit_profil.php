@@ -10,22 +10,8 @@
           <div class="card-body">
               <?= form_open_multipart(); ?>
               <input type="hidden" name="id" value="<?= $profil['id'] ?>">
+              <input type="hidden" name="id_program" value="<?= $profil['id_program'] ?>">
               <div class="row">
-                  <div class="col-12">
-                      <div class="form-group">
-                          <label>Program Pendidikan</label>
-                          <select name="id_program" class="form-control" required>
-                              <option value="">--pilih--</option>
-                              <?php foreach ($program as $p) { ?>
-                                  <?php if ($profil['id_program'] == $p['id_program']) { ?>
-                                      <option value="<?= $p['id_program']; ?>" selected><?= $p['kode']; ?> (<?= $p['nama_pendidikan']; ?>)</option>
-                                  <?php } else { ?>
-                                      <option value="<?= $p['id_program']; ?>"><?= $p['kode']; ?> (<?= $p['nama_pendidikan']; ?>)</option>
-                                  <?php } ?>
-                              <?php } ?>
-                          </select>
-                      </div>
-                  </div>
                   <div class="col-12">
                       <div class="form-group">
                           <label for="sejarah">Sejarah Singkat</label>

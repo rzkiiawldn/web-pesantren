@@ -1,9 +1,4 @@
 <div class="container-fluid">
-    <div class="row">
-        <div class="col">
-            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#tambah_program_pendidikan"><i class="fas fa-plus"></i> Tambah data</a>
-        </div>
-    </div>
     <?= $this->session->flashdata('message'); ?>
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
@@ -37,7 +32,6 @@
                                 <td>
                                     <a href="<?= base_url('admin/program_pendidikan/detail_program_pendidikan/' . $p['id_program']) ?>" class="badge badge-info">detail</a>
                                     <a href="" class="badge badge-success" data-toggle="modal" data-target="#edit_program_pendidikan<?= $p['id_program']; ?>">edit</a>
-                                    <a href="<?= base_url('admin/program_pendidikan/hapus_program_pendidikan/' . $p['id_program']); ?>" class="badge badge-danger" onclick="return confirm('Yakin ingin menghapus ?');">Hapus</a>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -50,58 +44,6 @@
 </div>
 <!-- /.container-fluid -->
 
-</div>
-
-
-<div class="modal fade" id="tambah_program_pendidikan" tabindex="-1" role="dialog" aria-labelledby="tambah_program_pendidikanLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="tambah_program_pendidikanLabel">Tambah program pendidikan</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <?= form_open_multipart('admin/program_pendidikan/tambah_program_pendidikan'); ?>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="kode">Kode</label>
-                            <input type="text" class="form-control" name="kode" id="kode">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="nama_pendidikan">Nama Program Pendidikan</label>
-                            <input type="text" class="form-control" name="nama_pendidikan" id="nama_pendidikan">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label>logo</label>
-                            <input type="file" name="logo" class="form-control" required>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="keterangan_pendidikan">Keterangan Program Pendidikan</label>
-                            <textarea name="keterangan_pendidikan" id="keterangan_pendidikan" cols="20" rows="10" class="form-control"></textarea>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary" name="tambah">Tambah</button>
-            </div>
-            <?= form_close(); ?>
-        </div>
-    </div>
 </div>
 
 <!-- EDIT -->

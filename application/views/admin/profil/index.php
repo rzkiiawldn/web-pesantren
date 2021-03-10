@@ -1,9 +1,4 @@
 <div class="container-fluid">
-    <div class="row">
-        <div class="col">
-            <a href="<?= base_url('admin/profil/tambah_profil') ?>" class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Tambah data</a>
-        </div>
-    </div>
     <?= $this->session->flashdata('message'); ?>
     <!-- DataTales Example -->
     <div class="card shadow mb-4">

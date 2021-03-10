@@ -1,9 +1,4 @@
 <div class="container-fluid">
-    <div class="row">
-        <div class="col">
-            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#tambah_sambutan"><i class="fas fa-plus"></i> Tambah data</a>
-        </div>
-    </div>
     <?= $this->session->flashdata('message'); ?>
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
@@ -35,7 +30,6 @@
                                 <td>
                                     <a href="<?= base_url('admin/sambutan/detail_sambutan/' . $s['id_sambutan']) ?>" class="badge badge-info">detail</a>
                                     <a href="" class="badge badge-success" data-toggle="modal" data-target="#edit_sambutan<?= $s['id_sambutan']; ?>">edit</a>
-                                    <a href="<?= base_url('admin/sambutan/hapus_sambutan/' . $s['id_sambutan']); ?>" class="badge badge-danger" onclick="return confirm('Yakin ingin menghapus ?');">Hapus</a>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -47,57 +41,8 @@
 
 </div>
 <!-- /.container-fluid -->
-
 </div>
 
-
-<div class="modal fade" id="tambah_sambutan" tabindex="-1" role="dialog" aria-labelledby="tambah_sambutanLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="tambah_sambutanLabel">Tambah Sambutan</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <?= form_open_multipart('admin/sambutan/tambah_sambutan'); ?>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label>Program Pendidikan</label>
-                            <select name="id_program" class="form-control" required>
-                                <option value="">--pilih--</option>
-                                <?php foreach ($program as $p) { ?>
-                                    <option value="<?= $p['id_program']; ?>"><?= $p['nama_pendidikan']; ?></option>
-                                <?php } ?>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label>Foto</label>
-                            <input type="file" name="foto" class="form-control" required>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="isi_sambutan">Isi Sambutan</label>
-                            <textarea name="isi_sambutan" id="isi_sambutan" cols="20" rows="10" class="form-control"></textarea>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary" name="tambah">Tambah</button>
-            </div>
-            <?= form_close(); ?>
-        </div>
-    </div>
-</div>
 
 <!-- EDIT -->
 <?php
@@ -116,21 +61,7 @@ foreach ($sambutan as $s) : $no++; ?>
                     <input type="hidden" name="id" value="<?= $s['id_sambutan']; ?>">
                     <div class="modal-body">
                         <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Program Pendidikan</label>
-                                    <select name="id_program" class="form-control" required>
-                                        <option value="">--pilih--</option>
-                                        <?php foreach ($program as $p) { ?>
-                                            <?php if ($s['id_program'] == $p['id_program']) { ?>
-                                                <option value="<?= $p['id_program']; ?>" selected><?= $p['kode']; ?> (<?= $p['nama_pendidikan']; ?>)</option>
-                                            <?php } else { ?>
-                                                <option value="<?= $p['id_program']; ?>"><?= $p['kode']; ?> (<?= $p['nama_pendidikan']; ?>)</option>
-                                            <?php } ?>
-                                        <?php } ?>
-                                    </select>
-                                </div>
-                            </div>
+                            <input type="hidden" name="id_program" value="<?= $s['id_program'] ?>">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>Foto</label>
