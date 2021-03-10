@@ -1,0 +1,36 @@
+<section class="hero-wrap hero-wrap-2" style="background-image:url(../../assets/admin/img/informasi_web/<?= $informasi['background'] ?>);" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-end">
+            <div class="col-md-9 ftco-animate pb-5">
+                <p class="breadcrumbs mb-2"><span class="mr-2"><a href="<?= base_url('welcome'); ?>">Beranda <i class="fa fa-chevron-right"></i></a></span> <span><?= $title; ?> <i class="fa fa-chevron-right"></i></span></p>
+                <h1 class="mb-0 bread"><?= $title; ?></h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<?php foreach ($profil as $p) { ?>
+    <section class="ftco-section ftco-no-pt ftco-no-pb">
+        <div class="container">
+            <div class="row d-flex no-gutters">
+                <div class="col-md-6 pr-md-5 py-md-5">
+                    <div class="row justify-content-start py-5">
+                        <div class="col-md-12 heading-section ftco-animate">
+                            <h2 class="mb-4">VISI</h2>
+                            <p style="font-size: 16px" class="text-justify"><?= nl2br($p['visi']); ?>.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 pr-md-5 py-md-5">
+                    <div class="row justify-content-start py-5">
+                        <div class="col-md-12 heading-section ftco-animate">
+                            <h2 class="mb-4">MISI</h2>
+                            <p style="font-size: 16px" class="text-justify"><?= nl2br($p['misi']); ?>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<?php } ?>
